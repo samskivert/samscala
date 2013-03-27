@@ -3,8 +3,8 @@
 Every programmer accumulates a small pile of idioms that they use when programming in the small.
 Samscala contains mine.
 
-Unlike many programmers, I tend to write Scaladocs for my utility code, so you might find something
-of use when perusing the [documentation].
+I try to write Scaladocs for my utility code, so you might find something of use when perusing the
+[documentation].
 
 ## Using on your project
 
