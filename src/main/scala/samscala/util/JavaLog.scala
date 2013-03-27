@@ -9,8 +9,8 @@ import java.util.logging._
 /**
  * A `Log` subclass that routes logging to Java's logging API.
  */
-class JavaLog (module:String) extends Log(module)
-{
+class JavaLog (module:String) extends Log(module) {
+
   override protected def doLog (level :Int, fmsg :String, error :Option[Throwable]) {
     _logger.log(Levels(level), fmsg, error.getOrElse(null))
   }

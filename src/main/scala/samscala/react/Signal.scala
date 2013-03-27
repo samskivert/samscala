@@ -4,8 +4,7 @@
 
 package samscala.react
 
-/** A signal that emits events of type `T`.
-  */
+/** A signal that emits events of type `T`. */
 class Signal[T] extends SignalV[T] {
 
   /** Causes this signal to emit the supplied event to connected slots.
