@@ -14,7 +14,7 @@ class Reactor[L] {
   /** Returns true if this reactor has at least one connection. */
   def hasConnections :Boolean = (_listeners != null)
 
-  protected def addConnection (prio :Int, listener :L) :Cons[L] = synchronized {
+  protected def addConnection (prio :Int, listener :L) :Connection = synchronized {
     if (listener == null) throw new NullPointerException("Null listener")
     addCons(new Cons(this, prio, listener))
   }
