@@ -84,8 +84,8 @@ class Log (module :String) {
     val sb = new StringBuffer
     _date.setTime(System.currentTimeMillis)
     _format.format(_date, sb, _fpos)
-    sb.append(" ").append(module).append("/").append(LevelNames(level))
-    sb.append(" ").append(fmsg)
+    sb.append(" ").append(LevelNames(level)).append("/").append(module).append(": ")
+    sb.append(fmsg)
     val out = if (level > 1) System.err else System.out
     out.println(sb)
     error foreach { _.printStackTrace(out) }
