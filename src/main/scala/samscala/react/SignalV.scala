@@ -10,6 +10,9 @@ import scala.collection.mutable.ListBuffer
   *
   * @define PRIODOC the priority of the connection. Higher priorities are notified first.
   * @define CONDOC an object that can be used to close the connection.
+  * @define EXNDOC Throwable if a listener throws an exception it will propagate out of this method.
+  * All listeners will be notified regardless of whether any of them throw exceptions. If multiple
+  * listeners throw an exception, they are combined into a [[MultiFailureException]].
   */
 class SignalV[T] extends Reactor[T => Unit] {
   import Impl._

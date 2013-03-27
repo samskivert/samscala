@@ -4,10 +4,12 @@
 
 package samscala.react
 
-/** A signal that emits events of type {@code T}. */
+/** A signal that emits events of type `T`.
+  */
 class Signal[T] extends SignalV[T] {
 
-  /** Causes this signal to emit the supplied event to connected slots. */
+  /** Causes this signal to emit the supplied event to connected slots.
+    * @throws $EXNDOC */
   def emit (event :T) = notifyEmit(event)
 }
 

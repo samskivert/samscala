@@ -6,9 +6,9 @@ package samscala.react
 
 import java.io.{PrintStream, PrintWriter}
 
-/**
- * An exception thrown to communicate multiple listener failures.
- */
+/** An exception thrown to communicate multiple listener failures. See [[Signal.emit]] for details
+  * on when this is thrown .
+  */
 class MultiFailureException (val failures :Seq[Throwable]) extends RuntimeException {
 
   override def getMessage = {
