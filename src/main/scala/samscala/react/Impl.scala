@@ -45,6 +45,9 @@ object Impl {
       */
     protected def connect () :Connection
 
+    // connectionAdded and connectionRemoved are only ever called with a lock held on this reactor,
+    // so we're safe in checking and mutating _conn
+
     override protected def connectionAdded () {
       super.connectionAdded()
       if (_conn == null) _conn = connect()
