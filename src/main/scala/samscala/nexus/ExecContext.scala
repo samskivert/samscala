@@ -75,7 +75,11 @@ class ExecContext[E <: Entity] (exec :Executor, entity : => E) extends Handle[E]
     !wasActive
   }
 
-  private lazy val _entity :E = entity
+  private lazy val _entity :E = {
+    val e = entity
+    if (e == null) throw new NullPointerException("Context given null entity")
+    e
+  }
 
   // we only manipulate these in push() and pop(), which are synchronized
   private[this] var _active :Boolean = false
