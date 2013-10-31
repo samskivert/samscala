@@ -12,7 +12,7 @@ import java.util.logging._
 class JavaLog (module:String) extends Log(module) {
 
   override protected def doLog (level :Int, fmsg :String, error :Option[Throwable]) {
-    _logger.log(Levels(level), fmsg, error.getOrElse(null))
+    _logger.log(Levels(level), fmsg, error.orNull)
   }
 
   override protected def isEnabled (level :Int) =
